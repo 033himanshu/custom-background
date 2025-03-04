@@ -2,7 +2,7 @@ const input = document.querySelector('input')
 const addBtn = document.querySelector('.addButton button')
 const buttons = document.querySelector('.buttons')
 const span = document.querySelector('span')
-
+const buttonText = document.querySelector('.buttons h3')
 const colors = new Set()
 let len = 0
 const addButtonOnScreen = (color, id=undefined) =>{
@@ -10,6 +10,7 @@ const addButtonOnScreen = (color, id=undefined) =>{
         localStorage.setItem(`${id}`, color)
         console.log(color, `set on ${id}`)
     }
+    buttonText.removeAttribute('hidden')
     const newBtn = document.createElement('button')
     colors.add(color)
     newBtn.style.backgroundColor = color
